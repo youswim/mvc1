@@ -20,7 +20,7 @@ public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
     }
 
     @Override
-    public ModelView handle(HttpServletRequest req, HttpServletResponse resp, Object handler) throws ServletException, IOException {
+    public ModelView handle(HttpServletRequest req, HttpServletResponse resp, Object handler) {
         ControllerV3 controller = (ControllerV3) handler;
 
         Map<String, String> paramMap = createParamMap(req);
