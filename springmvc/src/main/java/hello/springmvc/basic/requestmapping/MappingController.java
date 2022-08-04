@@ -38,5 +38,27 @@ public class MappingController {
         return "ok";
     }
 
-    // PathVariable 사용 - 다중 까지 햇음
+    @GetMapping(value = "/mapping-param", params = "mode=debug")
+    public String mappingParam() {
+        log.info("mappingParam");
+        return "ok";
+    }
+
+    @GetMapping(value = "/mapping-header", headers = "mode=debug")
+    public String mappingHeader() {
+        log.info("mappingHeader");
+        return "ok";
+    }
+
+    @PostMapping(value = "/mapping-consume", consumes = "application/json")
+    public String mappingConsume() {
+        log.info("mappingConsume");
+        return "ok";
+    }
+
+    @PostMapping(value = "/mapping-produce", produces = "text/html")
+    public String mappingProduces() {
+        log.info("mappingProduces");
+        return "ok";
+    }
 }
